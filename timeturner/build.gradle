@@ -1,0 +1,27 @@
+apply plugin: 'kotlin'
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    compile "android.arch.lifecycle:common:1.1.1"
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+repositories {
+    mavenCentral()
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
